@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         Move();
     }
 
-    public void PlayerImpact(Player player)
+    public virtual void PlayerImpact(Player player)
     {
         player.DecreaseHealth(_damageAmount);
     }
