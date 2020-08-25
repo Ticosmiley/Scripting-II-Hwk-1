@@ -2,12 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public abstract class PowerUpBase : MonoBehaviour
 {
     [SerializeField] ParticleSystem _collectParticles;
     [SerializeField] AudioClip _collectSound;
 
     [SerializeField] float _powerupDuration = 2f;
+    [SerializeField] float _movementSpeed = 1;
+
+    Rigidbody _rb;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        Movement(_rb);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -45,5 +59,11 @@ public abstract class PowerUpBase : MonoBehaviour
         {
             AudioHelper.PlayClip2D(_collectSound, 1f);
         }
+    }
+
+    protected virtual void Movement(Rigidbody rb)
+    {
+        Quaternion turnOffset = Quaternion.Euler(0, 0, _movementSpeed);
+        rb.MoveRotation(_rb.rotation * turnOffset);
     }
 }
