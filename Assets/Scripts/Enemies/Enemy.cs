@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         if (player != null)
         {
             PlayerImpact(player);
-            ImpactFeedback();
+            ImpactFeedback(player);
         }
     }
 
@@ -34,11 +34,11 @@ public class Enemy : MonoBehaviour
         player.DecreaseHealth(_damageAmount);
     }
 
-    private void ImpactFeedback()
+    private void ImpactFeedback(Player player)
     {
-        if (_impactParticles != null)
+        if (_impactParticles != null && !player.IsInvincible)
         {
-            _impactParticles = Instantiate(_impactParticles, transform.position, Quaternion.identity);
+            _impactParticles = Instantiate(_impactParticles, transform.position - (transform.position - player.transform.position) / 2, Quaternion.identity);
         }
 
         if (_impactSound != null)

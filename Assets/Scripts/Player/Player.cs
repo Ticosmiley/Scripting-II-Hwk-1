@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BallMotor))]
+[RequireComponent(typeof(Inventory))]
 public class Player : MonoBehaviour
 {
     [SerializeField] int _maxHealth = 3;
     int _currentHealth;
+    bool _isInvincible = false;
+    public bool IsInvincible
+    {
+        get => _isInvincible;
+        set => _isInvincible = value;
+    }
 
     BallMotor _ballMotor;
 
@@ -44,11 +51,14 @@ public class Player : MonoBehaviour
 
     public void DecreaseHealth(int amount)
     {
-        _currentHealth -= amount;
-        Debug.Log("Player's health: " + _currentHealth);
-        if (_currentHealth <= 0)
+        if (!_isInvincible)
         {
-            Kill();
+            _currentHealth -= amount;
+            Debug.Log("Player's health: " + _currentHealth);
+            if (_currentHealth <= 0)
+            {
+                Kill();
+            }
         }
     }
 

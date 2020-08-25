@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &271184465146951932
+--- !u!1 &5225181638083172179
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 271184465146951910}
-  - component: {fileID: 271184465146951929}
-  - component: {fileID: 271184465146951928}
-  - component: {fileID: 271184465146951931}
-  - component: {fileID: 271184465146951930}
-  - component: {fileID: 271184465146951933}
+  - component: {fileID: 5225181638083172204}
+  - component: {fileID: 5225181638083172207}
+  - component: {fileID: 5225181638083172206}
+  - component: {fileID: 5225181638083172177}
+  - component: {fileID: 5225181638083172176}
   m_Layer: 0
-  m_Name: SpeedIncrease
+  m_Name: Invincibility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &271184465146951910
+--- !u!4 &5225181638083172204
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271184465146951932}
+  m_GameObject: {fileID: 5225181638083172179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.62, y: 1.11, z: -6.02}
+  m_LocalPosition: {x: -4.26, y: 0.62, z: -11.19}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &271184465146951929
+--- !u!33 &5225181638083172207
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271184465146951932}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &271184465146951928
+  m_GameObject: {fileID: 5225181638083172179}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5225181638083172206
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271184465146951932}
+  m_GameObject: {fileID: 5225181638083172179}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ed2fc2c591c31334694cf0bd61f3600a, type: 2}
+  - {fileID: 2100000, guid: 00b685ed00fb0bc4690e69193e3a75b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,48 +80,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &271184465146951931
-BoxCollider:
+--- !u!136 &5225181638083172177
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271184465146951932}
+  m_GameObject: {fileID: 5225181638083172179}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &271184465146951930
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271184465146951932}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &271184465146951933
+--- !u!114 &5225181638083172176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 271184465146951932}
+  m_GameObject: {fileID: 5225181638083172179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0d54b40c2742a41bc589d7cbb1a101, type: 3}
+  m_Script: {fileID: 11500000, guid: 4960b63481d5c0347b13fa69ace5352e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 1
-  _collectParticles: {fileID: 100006, guid: 537a18d45863c794c97e81b7bc643e71, type: 3}
+  _collectParticles: {fileID: 0}
   _collectSound: {fileID: 0}
-  _speedAmount: 5
+  _powerupDuration: 5
+  _material: {fileID: 2100000, guid: 7c18f91832c94264c8803a5650486deb, type: 2}
